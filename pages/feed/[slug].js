@@ -2,6 +2,7 @@ import Head from "next/head"
 import { useRouter } from 'next/router';
 import styles from '../../styles/Feed.module.css';
 import { Toolbar } from '../../components/toolbar';
+import { Image } from 'antd';
 function Feed({ pageNumber, articles }) {
     const router = useRouter()
     console.log(articles, pageNumber)
@@ -20,7 +21,7 @@ function Feed({ pageNumber, articles }) {
                         <div key={index} className={styles.post}>
                             <h1 onClick={() => (window.location.href = article.url)}>{article.title}</h1>
                             <p>{article.description}</p>
-                            {!!article.urlToImage && <img src={article.urlToImage} />}
+                            {!!article.urlToImage && <Image layout='fill' src={article.urlToImage} />}
                         </div>
                     ))}
                 </div>

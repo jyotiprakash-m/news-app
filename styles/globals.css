@@ -17,6 +17,7 @@ a {
 
 .page-container {
   display: flex;
+  padding: 10px;
   height: 100vh;
   flex-direction: column;
 }

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/EOM.module.css';
 import { Toolbar } from '../components/toolbar';
+import { Image } from 'antd';
 function EMO({ employee }) {
     console.log(employee)
     return (
@@ -35,7 +36,7 @@ function EMO({ employee }) {
                     <div className={styles.employeeOfTheMonth}>
                         <h3>{employee.name}</h3>
                         <h6>{employee.position}</h6>
-                        <img src={employee.image} alt="employee" />
+                        <Image src={employee.image} alt="employee" />
                         <p>{employee.description}</p>
                     </div>
                 </div>
