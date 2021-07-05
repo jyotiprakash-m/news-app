@@ -6,7 +6,7 @@ import { Image } from 'antd';
 function Feed({ pageNumber, articles }) {
     const router = useRouter()
     console.log(articles, pageNumber)
-    return (
+    return articles.length ? (
         <>
             <Head>
                 <meta property="og:image" content={articles[0]?.urlToImage} />
@@ -52,7 +52,14 @@ function Feed({ pageNumber, articles }) {
                 </div>
             </div>
         </>
-    )
+    ) : (
+        <div className="page-container">
+            <Toolbar />
+            <div className={styles.main}>
+                <h1>Oops! No articles for this page</h1>
+            </div>
+        </div>
+    );
 }
 
 
